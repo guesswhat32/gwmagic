@@ -13,7 +13,7 @@
         <header class="page-title"></header>
         <main class="content-area">
 			<div class="fc">
-				<h1 id = "guessTitle">Guess!</h1>
+				<h2 id = "guessTitle">Guess!</h2>
 			</div>
 
 			<div class="fc">
@@ -263,7 +263,7 @@
 	function checkAnswer() {
 		if(currentPage === 1) {
 			let userAnswer = document.querySelector("#page-div-1 #guessInput").value.trim();
-			if (userAnswer.toLowerCase() === "哈利波特" || userAnswer.toLowerCase() === "harrypotter") {
+			if (userAnswer.toLowerCase() === "哈利波特" || userAnswer.toLowerCase() === "harrypotter" || userAnswer.toLowerCase() === "harry potter") {
 				goToPage(2);
 				alert("Bingo ！!");
 			} else {
@@ -283,6 +283,8 @@
 	// ＝＝＝＝＝＝＝＝＝ 第一頁 恭喜引言 ＝＝＝＝＝＝＝＝＝ 
 	function showContentAnimation() {
 		const items = document.querySelectorAll('.fade-in-item');
+
+		return;
 	    
 	    // 設定動畫的持續時間和每行的延遲間隔 (單位: 秒)
 	    const animationDuration = 0.8; // 動畫持續 1 秒

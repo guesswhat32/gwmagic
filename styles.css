@@ -12,8 +12,8 @@ body, html {
 
 /* 2. 🌟 主容器：固定頁面高度 🌟 */
 .container {
-    width: 100vw; 
-    min-height: 100vh; /* 讓容器高度等於視窗高度 */
+    width: 98vw; 
+    height: 95vh;
     
     border: 1px solid #ccc;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -217,10 +217,14 @@ body, html {
 
 /* 動畫 */
 /* 預設樣式 (讓動畫元素一開始是隱藏的) */
-.fade-in-item {
+.fade-in-item-tmp {
     opacity: 0; /* 初始透明度為 0 (隱藏) */
     display: block; /* 確保每行獨立佔用空間 */
     transform: translateY(20px); /* 初始位置比正常位置低 20px */
+}
+
+.fade-in-item {
+    display: block; /* 確保每行獨立佔用空間 */
 }
 
 /* 定義動畫效果 */
