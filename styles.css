@@ -27,6 +27,10 @@ body, html {
     box-sizing: border-box; /* 確保 padding 不會增加總高度 */
 }
 
+#guessTitle {
+    margin-top: 0;
+}
+
 /* 3. 標題樣式 */
 .page-title {
     padding: 15px 0;
@@ -119,8 +123,8 @@ body, html {
 
 /* 輪播主容器：設定尺寸和裁切，確保一次只看到一張圖片 */
 .carousel-container {
-    width: 320px;
-    height: 320px;
+    width: 300px;
+    height: 300px;
     overflow: hidden; /* 關鍵：隱藏超出邊界的圖片 */
     border-radius: 8px;
     border: 3px solid #7a470373;
