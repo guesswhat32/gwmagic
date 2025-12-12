@@ -13,7 +13,7 @@ body, html {
 /* 2. 🌟 主容器：固定頁面高度 🌟 */
 .container {
     width: 90vw; 
-    height: 80vh;
+    height: 90vh;
     
     border: 1px solid #ccc;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
