@@ -43,6 +43,17 @@ body, html {
     flex-direction: column;
     align-items: center;
     width: 100%;
+    overflow-y: hidden;
+}
+
+.spell-area {
+    /* 讓圖片區域佔據剩餘的高度 */
+    flex-grow: 1; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 100%;
 }
 
 /* 5. 圖片樣式 */
@@ -81,9 +92,10 @@ body, html {
 }
 
 #spellTable {
-    width: 100%; /* 佔據大部分寬度 */
+    width: 95%; /* 佔據大部分寬度 */
+    height: 80%;
     overflow-y: auto;
-    height: 80vh;
+    
     margin: 1em;
     border: 2px solid #4B0082;
 }
@@ -135,7 +147,7 @@ body, html {
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
     border: none;
-    padding: 10px 15px;
+    padding: 10px 20px;
     font-size: 24px;
     transition: background-color 0.3s ease;
 }
@@ -163,23 +175,15 @@ body, html {
     justify-content: center;
 }
 .fc-biggap {
-	column-gap: 4em;
+	column-gap: 3em;
 }
 .fr {
 	display: flex;
     flex-direction: column;
-    row-gap: 0.5em;
+    row-gap: 1px;
     align-items: center;
 }
-.clean-input {
-    padding: 0.5em;
-    font-size: 24px;
-    width: 70%;
-    height: 20px;
-}
-.clean-input-btn {
-    height: 40px;
-}
+
 .hide {
 	display: none;
 }
@@ -201,7 +205,7 @@ body, html {
 
 /* 按鈕 */
 .bigButton {
-    padding: 15px 30px; /* 內邊距，讓按鈕變大 */
+    padding: 12px 30px; /* 內邊距，讓按鈕變大 */
     font-size: 1.2em;
     font-weight: bold;
     color: white; /* 文字顏色 */
@@ -211,11 +215,21 @@ body, html {
     cursor: pointer; /* 游標變成手型 */
     transition: background-color 0.3s; /* 增加懸停動畫效果 */
 }
-
-/* 懸停效果 */
-.bigButton:hover {
-    background-color: #A52A2A; /* 懸停時顏色變淺 */
+.clean-input-btn {
+    height: 40px;
+    color: white;
+    background-color: #1850b2de;
+    border-radius: 8px;
+    border: 0px;
 }
+
+.clean-input {
+    padding: 0.5em;
+    font-size: 24px;
+    width: 70%;
+    height: 20px;
+}
+
 
 
 /* 動畫 */

@@ -23,7 +23,7 @@
         	</div>
         
         	<!--  首頁 page 1 猜 哈利波特 -->
-        	<div id="page-div-1" class="content-area">
+        	<div id="page-div-1" class="content-area hide">
 	   	        <div class="image-grid">
 	                <img src="./pics/hali.png" class="grid-image">
 	                <img src="./pics/porter.png" class="grid-image">
@@ -80,11 +80,17 @@
 					首先，妳需要通過初階魔咒測試<br><br>
 					根據不同情境<br>
 					回答使用的魔咒為何<br><br>
-					妳可以隨時點擊本書 ...  <img src="./pics/spells.jpg" class="para-image sm-image" onclick="openSpell()">  <br>
-					觀看魔咒說明<br><br><br>
+					<div class="fc">
+						<div>
+							妳可以隨時點擊本書 ...  <br>
+							觀看魔咒說明
+						</div>
+						<img src="./pics/spells.jpg" class="para-image sm-image" onclick="goToPage(99)">  <br>
+					</div>
+					<br>
 					準備好了嗎？<br>
 
-					<div style="text-align: center; margin-top: 50px;">
+					<div style="text-align: center; margin-top: 25px;">
 						<button id="startButton" class="bigButton" onclick="goToPage(4)">
 							Let's Mang!
 						</button>
@@ -105,12 +111,12 @@
 						<br>	
 						<div class="fc fc-biggap">
 							<button class="carousel-button prev" onclick="changeSlide(-1)">&#10094;</button> 
-							<img src="./pics/spells.jpg" class="para-image sm-image" onclick="openSpell()">  
+							<img src="./pics/spells.jpg" class="para-image sm-image" onclick="goToPage(99)">  
 							<button class="carousel-button next" onclick="changeSlide(1)">&#10095;</button> 
 						</div>
 						<br>
 						<div class="fc">
-							<input type="text" id="guessInput" class="clean-input" placeholder="故事中 ＊＊＊＊＊ 是？">
+							<input type="text" id="guessInput" class="clean-input" placeholder="">
 							<button onclick="checkAnswer()" class="clean-input-btn">確認</button>
 						</div>
 						<br>
@@ -121,7 +127,7 @@
 
 
 			<!--  page 99 魔咒說明書 -->
-			<div id="page-div-99" class="content-area hide">
+			<div id="page-div-99" class="spell-area hide">
 				<div id="spellTable">
 				<table id="">
 				<tbody>
@@ -210,14 +216,14 @@
 
 
 	var clickGuessTitleCount = 0;
-	var currentPage = 1;
+	var currentPage = localStorage.getItem('nowPage') == null ? 1 : localStorage.getItem('nowPage');
 	var returnPage = 1;
 	var currentSlideIdx = 0;
 	var page4ImgSrc = ["./pics/renn/luwork.png", "./pics/renn/lutired.png", "./pics/renn/mangwork.png",
 		"./pics/renn/mangtired.png", "./pics/renn/together.png", "./pics/renn/charge.png",];
 	
 	// TODO test temp
-	goToPage(2);
+	
 
 
 	document.getElementById('guessTitle').addEventListener('click', function() {
@@ -237,26 +243,29 @@
 	});
 	
 	function goToPage(pageNo) {
-		if(pageNo === 1) {
+		if(pageNo == 1) {
 			document.getElementById('guessTitle').textContent = "Guess!";
 			document.getElementById("guessTitle").classList.remove("hide");
-		} else if(pageNo === 2) {
+		} else if(pageNo == 2) {
 			document.getElementById('guessTitle').textContent = "Congratulations!";
 			document.getElementById("guessTitle").classList.remove("hide");
 			showContentAnimation();
-		} else if(pageNo === 3) {
+		} else if(pageNo == 3) {
 			document.getElementById('guessTitle').textContent = "Rule";
 			document.getElementById("guessTitle").classList.remove("hide");
 			showContentAnimation();
-		} else if(pageNo === 4) {
-			document.getElementById('guessTitle').textContent = "Magic Test 1";
+		} else if(pageNo == 4) {
+			document.getElementById('guessTitle').textContent = "Test 1";
 			document.getElementById("guessTitle").classList.remove("hide");
 			changeSlide(0);
 			showContentAnimation();
 			
-		} else if(pageNo === 99) {
+		} else if(pageNo == 99) {
 			document.getElementById("guessTitle").classList.add("hide");
+			document.getElementById("closeBookButton").classList.remove("hide");
 			document.getElementById('guessTitle').textContent = "Spells";
+			
+			returnPage = currentPage;
 		} else {
 			return;
 		}
@@ -273,12 +282,15 @@
 		document.getElementById(goPageId).classList.remove("hide");
 
 		currentPage = pageNo;
+		if(currentPage != 99) {
+			localStorage.setItem('nowPage', currentPage);
+		}
 	}
 
 	
 	// ＝＝＝＝＝＝＝＝＝ 首頁 ＝＝＝＝＝＝＝＝＝ 
 	function checkAnswer() {
-		if(currentPage === 1) {
+		if(currentPage == 1) {
 			let userAnswer = document.querySelector("#page-div-1 #guessInput").value.trim();
 			if (userAnswer.toLowerCase() === "哈利波特" || userAnswer.toLowerCase() === "harrypotter" || userAnswer.toLowerCase() === "harry potter") {
 				goToPage(2);
@@ -286,10 +298,9 @@
 			} else {
 				alert("再想想ㄅ ！!");
 			}
-		} else if(currentPage === 4) {
+		} else if(currentPage == 4) {
 			let userAnswer = document.querySelector('#page-div-4 #guessInput').value.trim();
 			if (userAnswer.toLowerCase() === "力力復" || userAnswer.toLowerCase() === "復甦咒" || userAnswer.toLowerCase() === "rennervate") {
-				// goToPage(2);
 				alert("太厲害了 ！!");
 			} else {
 				alert("再想想ㄅ ！!");
@@ -300,19 +311,12 @@
 	// ＝＝＝＝＝＝＝＝＝ 第一頁 恭喜引言 ＝＝＝＝＝＝＝＝＝ 
 	function showContentAnimation() {
 		const items = document.querySelectorAll('.fade-in-item');
-
-	    // 設定動畫的持續時間和每行的延遲間隔 (單位: 秒)
 	    const animationDuration = 0.8; // 動畫持續 1 秒
-	    const delayIncrement = 0.6;    // 每行間隔 0.8 秒浮現
-	    
-	    // 從最後一個元素 (最
-	    // 由於 HTML 結構是從上到下，我們需要反轉這個陣列來計算延遲
+	    const delayIncrement = 0.1;    // 每行間隔 0.8 秒浮現
 	    const reversedItems = Array.from(items).reverse();
 	    
 	    reversedItems.forEach((item, index) => {
-	        // 計算延遲時間 (從 0, 0.8s, 1.6s, 2.4s... 遞增)
 	        const delay = index * delayIncrement;
-	        
 	        // 套用 CSS 動畫樣式
 	        item.style.animation = `fadeInSlideUp ${animationDuration}s ease-out ${delay}s forwards`;
 	    });
@@ -339,28 +343,6 @@
 
 
 	// ＝＝＝＝＝＝＝＝＝ 魔咒書 ＝＝＝＝＝＝＝＝＝ 
-	function openSpell() {
-		returnPage = currentPage;
-
-		const contentArea = event.currentTarget.closest('.content-area');
-		if (contentArea) {
-            // 隱藏該元素，通過添加 'hide' 類別來實現
-            // 假設您的 CSS 中有 .hide { display: none; }
-            contentArea.classList.add('hide'); 
-            
-            // 或者，直接操作 display 屬性來隱藏，如果沒有 .hide 類別：
-            // contentArea.style.display = 'none';
-            
-            console.log('成功隱藏 content-area 區塊');
-        } else {
-            console.error('未找到 class="content-area" 的父級元素。');
-        }
-
-		document.getElementById("closeBookButton").classList.remove("hide");
-		
-		goToPage(99);
-
-	}
 
 	function closeSpell() {
 		document.getElementById("closeBookButton").classList.add("hide");
@@ -375,6 +357,11 @@
 			behavior: 'smooth' // 設置為 'smooth' 實現平滑滾動效果
 		});
 	}
+
+
+
+	// init
+	goToPage(currentPage);
 	
 </script>
 
