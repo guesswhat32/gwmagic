@@ -41,21 +41,32 @@
 			<!--  page 2 恭喜參加求婚 -->
         	<div id="page-div-2" class="content-area hide">
         		<div id="t" class="fade-in-item">
-        			恭喜妳！ 成功開啟 求婚魔法試煉 ❤️ <br>
-        			接下來，妳將成為哈利波... <span class="big-txt pink-txt">芒</span> ！<br>
-        			<img src="./pics/mangPerson.png" class="para-image"> <br>
-					通過一系列的考驗之後 <br>
-					就能得到屬於妳的魔法石！ <br> <br>
-					什麼？ 歐 別擔心～ <br>
+					<div class="fc">
+						恭喜妳！ 成功開啟 求婚魔法試煉 ❤️
+					</div>
 					<div class="fc">
 						<div>
+							接下來，妳將成為哈利波... <span class="big-txt pink-txt">芒</span> ！<br><br>
+						</div>
+					</div>
+					<div class="fc">
+						<img src="./pics/mangPerson.png" class="para-image"> <br>
+						<div>
+							通過一系列的考驗之後 <br>
+							就能得到屬於妳的魔法石！ <br> <br>
+						</div>
+						
+					</div>
+					<div class="fc">
+						<div>
+							什麼？ 歐 別擔心～ <br>
 							主辦者 professor <span class="big-txt pink-txt">爐</span> 
 							<br> 會在旁協助妳的 🫡 
 						</div>
-						<img src="./pics/luPerson.png" class="para-image"> <br>
+						<img src="./pics/luPerson.png" class="para-image">
 					</div>
 
-					<div style="text-align: center; margin-top: 5px;">
+					<div style="text-align: center; margin-top: 10px;">
 						<button id="startButton" class="bigButton" onclick="goToPage(3)">
 							GO!
 						</button>
@@ -195,6 +206,9 @@
 </body>
 
 <script>
+	// TODO localStorage 防止按到重新整理
+
+
 	var clickGuessTitleCount = 0;
 	var currentPage = 1;
 	var returnPage = 1;
@@ -203,7 +217,7 @@
 		"./pics/renn/mangtired.png", "./pics/renn/together.png", "./pics/renn/charge.png",];
 	
 	// TODO test temp
-	goToPage(1);
+	goToPage(2);
 
 
 	document.getElementById('guessTitle').addEventListener('click', function() {
@@ -287,8 +301,6 @@
 	function showContentAnimation() {
 		const items = document.querySelectorAll('.fade-in-item');
 
-		return;
-	    
 	    // 設定動畫的持續時間和每行的延遲間隔 (單位: 秒)
 	    const animationDuration = 0.8; // 動畫持續 1 秒
 	    const delayIncrement = 0.6;    // 每行間隔 0.8 秒浮現

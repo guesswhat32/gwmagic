@@ -23,7 +23,7 @@ body, html {
     display: flex; 
     flex-direction: column; 
     align-items: center; /* 讓標題和圖片水平居中 */
-    padding: 20px;
+    padding: 2px;
     box-sizing: border-box; /* 確保 padding 不會增加總高度 */
 }
 
@@ -160,6 +160,7 @@ body, html {
 	display: flex;
 	column-gap: 0.5em;
     align-items: center;
+    justify-content: center;
 }
 .fc-biggap {
 	column-gap: 4em;
@@ -219,13 +220,13 @@ body, html {
 
 /* 動畫 */
 /* 預設樣式 (讓動畫元素一開始是隱藏的) */
-.fade-in-item-tmp {
+.fade-in-item {
     opacity: 0; /* 初始透明度為 0 (隱藏) */
     display: block; /* 確保每行獨立佔用空間 */
     transform: translateY(20px); /* 初始位置比正常位置低 20px */
 }
 
-.fade-in-item {
+.fade-in-item-tmp {
     display: block; /* 確保每行獨立佔用空間 */
 }
 
