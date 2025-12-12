@@ -1,0 +1,236 @@
+/* 1. 全局重設 */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%; /* 確保 body 和 html 佔滿視窗高度 */
+    display: flex; /* 讓內容容器可以居中 */
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    background-color: #f4f4f9;
+}
+
+/* 2. 🌟 主容器：固定頁面高度 🌟 */
+.container {
+    width: 100vw; 
+    min-height: 100vh; /* 讓容器高度等於視窗高度 */
+    
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    
+    /* 讓容器內的內容垂直排列 */
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; /* 讓標題和圖片水平居中 */
+    padding: 20px;
+    box-sizing: border-box; /* 確保 padding 不會增加總高度 */
+}
+
+/* 3. 標題樣式 */
+.page-title {
+    padding: 15px 0;
+    color: #333;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+/* 4. 圖片區域樣式 */
+.content-area {
+    /* 讓圖片區域佔據剩餘的高度 */
+    flex-grow: 1; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* 5. 圖片樣式 */
+.main-image {
+    max-width: 90%; /* 圖片最大寬度不超過容器寬度 */
+    max-height: 90%; /* 圖片最大高度不超過內容區域高度 */
+    height: auto;
+    border-radius: 8px;
+    object-fit: contain; /* 確保圖片不變形 */
+}
+
+.image-grid {
+    width: 80%; /* 網格佔據 content-area 寬度的 80% */
+    display: grid;
+    /* 設置 2x2 網格，每列和每行平均分配空間 */
+    grid-template-columns: 1fr 1fr 1fr 1fr; 
+    gap: 10px; /* 圖片之間的間距 */
+    padding: 10px;
+}
+
+/* 4. 🌟 新增：網格圖片樣式 🌟 */
+.grid-image {
+    width: 100%;
+    height: 100%;
+    /* 確保圖片填滿網格區域並裁切多餘部分 */
+    object-fit: contain; 
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#closeBookButton{
+    height: 3em;
+    width: 5em;
+    align-self: end;
+}
+
+#spellTable {
+    width: 100%; /* 佔據大部分寬度 */
+    overflow-y: auto;
+    height: 80vh;
+    margin: 1em;
+    border: 2px solid #4B0082;
+}
+
+#spellTable td {
+    text-align: center; /* **關鍵修改**：設定文字置中對齊 */
+    padding: 0.5em 0.1em;
+}
+
+
+#spellTable tbody tr {
+    background-color: #fff; /* 預設背景色為白色 (奇數行) */
+    transition: background-color 0.3s; /* 增加懸停時的平滑過渡效果 */
+}
+
+/* 2. 斑馬紋效果：針對 tbody 中的偶數行 (Even Rows) 設定不同的背景色 */
+#spellTable tbody tr:nth-child(even) {
+    background-color: #d6cdf062; /* 淺灰色背景，作為分隔效果 */
+}
+
+
+/* 輪播主容器：設定尺寸和裁切，確保一次只看到一張圖片 */
+.carousel-container {
+    width: 320px;
+    height: 320px;
+    overflow: hidden; /* 關鍵：隱藏超出邊界的圖片 */
+    border-radius: 8px;
+    border: 3px solid #7a470373;
+}
+
+/* 圖片移動容器：設定總寬度為圖片數量的倍數，並啟用過渡效果 */
+.carousel-images {
+    display: flex;
+    /* 總寬度由 JS 處理，但確保平滑移動 */
+    transition: transform 0.5s ease-in-out; 
+    height: 100%;
+}
+
+/* 容器內的每張圖片：確保每張圖片都佔據容器的 100% 寬度 */
+.carousel-images img {
+    min-width: 100%; 
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+/* 箭頭按鈕 */
+.carousel-button {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 24px;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.carousel-button.prev {
+    left: 0;
+    border-radius: 4px;
+}
+
+.carousel-button.next {
+    right: 0;
+    border-radius: 4px;
+}
+
+
+/* 共同可用 */
+.fc {
+	display: flex;
+	column-gap: 0.5em;
+    align-items: center;
+}
+.fc-biggap {
+	column-gap: 4em;
+}
+.fr {
+	display: flex;
+    flex-direction: column;
+    row-gap: 0.5em;
+    align-items: center;
+}
+.clean-input {
+    padding: 0.5em;
+
+    height: 20px;
+}
+.clean-input-btn {
+    height: 40px;
+}
+.hide {
+	display: none;
+}
+.big-txt {
+	font-size: 1.5em;
+}
+.pink-txt {
+	color: #e882d8;
+}
+.para-image {
+	object-fit: contain;
+	height: 10em;
+	/* width: 100%; */
+}
+
+.sm-image {
+	height: 5em;
+}
+
+/* 按鈕 */
+.bigButton {
+    padding: 15px 30px; /* 內邊距，讓按鈕變大 */
+    font-size: 1.2em;
+    font-weight: bold;
+    color: white; /* 文字顏色 */
+    background-color: #8B0000; /* 深紅色背景，符合儀式感 */
+    border: 3px solid; /* 金色邊框，增加魔法感 */
+    border-radius: 8px; /* 圓角 */
+    cursor: pointer; /* 游標變成手型 */
+    transition: background-color 0.3s; /* 增加懸停動畫效果 */
+}
+
+/* 懸停效果 */
+.bigButton:hover {
+    background-color: #A52A2A; /* 懸停時顏色變淺 */
+}
+
+
+/* 動畫 */
+/* 預設樣式 (讓動畫元素一開始是隱藏的) */
+.fade-in-item {
+    opacity: 0; /* 初始透明度為 0 (隱藏) */
+    display: block; /* 確保每行獨立佔用空間 */
+    transform: translateY(20px); /* 初始位置比正常位置低 20px */
+}
+
+/* 定義動畫效果 */
+@keyframes fadeInSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0); /* 最終位置回到正常位置 */
+    }
+}

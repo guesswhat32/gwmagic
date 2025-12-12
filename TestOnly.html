@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess What</title>
+    <link rel="stylesheet" href="styles.css"> 
+</head>
+<body>
+    
+    <div class="container">
+        
+        <header class="page-title"></header>
+        <main class="content-area">
+			<div class="fc">
+				<h1 id = "guessTitle">Guess!</h1>
+			</div>
+
+			<div class="fc">
+				<button id="closeBookButton" class="hide" onclick="closeSpell()">關閉</button>
+        	</div>
+        
+        	<!--  首頁 page 1 猜 哈利波特 -->
+        	<div id="page-div-1" class="content-area">
+	   	        <div class="image-grid">
+	                <img src="./pics/hali.png" class="grid-image">
+	                <img src="./pics/hali.png" class="grid-image">
+	                <img src="./pics/porter.png" class="grid-image">
+	                <img src="./pics/porter.png" class="grid-image">
+	            </div>
+	        	<p>猜一人名</p>
+	        	<div class="fc">
+	  		        <input type="text" id="guessInput" class="clean-input" placeholder="在此輸入您猜測的人名">
+					<button onclick="checkAnswer()" class="clean-input-btn">送出</button>
+	        	</div>
+        	</div>
+        	
+			<!--  page 2 恭喜參加求婚 -->
+        	<div id="page-div-2" class="content-area hide">
+        		<div id="t" class="fade-in-item">
+        			恭喜妳！ 成功開啟 求婚魔法試煉 ❤️ <br>
+        			接下來，妳將成為哈利波... <span class="big-txt pink-txt">芒</span> ！<br>
+        			<img src="./pics/mangPerson.png" class="para-image"> <br>
+					通過一系列的考驗之後 <br>
+					就能得到屬於妳的魔法石！ <br> <br>
+					什麼？ 歐 別擔心～ <br>
+					<div class="fc">
+						<div>
+							主辦者 professor <span class="big-txt pink-txt">爐</span> 
+							<br> 會在旁協助妳的 🫡 
+						</div>
+						<img src="./pics/luPerson.png" class="para-image"> <br>
+					</div>
+
+					<div style="text-align: center; margin-top: 50px;">
+						<button id="startButton" class="bigButton" onclick="goToPage(3)">
+							GO!
+						</button>
+					</div>
+				</div>
+        	</div>
+
+			<!--  page 3 遊戲規則 -->
+        	<div id="page-div-3" class="content-area hide">
+        		<div id="t" class="fade-in-item">
+					首先，妳需要通過初階魔咒測試<br><br>
+					根據不同情境<br>
+					回答使用的魔咒為何<br><br>
+					妳可以隨時點擊本書 ...  <img src="./pics/spells.jpg" class="para-image sm-image" onclick="openSpell()">  <br>
+					觀看魔咒說明<br><br><br>
+					準備好了嗎？<br>
+
+					<div style="text-align: center; margin-top: 50px;">
+						<button id="startButton" class="bigButton" onclick="goToPage(4)">
+							Let's Mang!
+						</button>
+					</div>
+				</div>
+			</div>
+
+			<!--  page 4 修復題 -->
+        	<div id="page-div-4" class="content-area hide">
+        		<div id="t" class="fade-in-item">
+					<div class="fr">
+						<p class="carousel-page">#1</p>
+						<div class="carousel-container">
+							<div class="carousel-images">
+								<img src="" alt="Image 1" class="carousel-img">
+							</div>
+
+						</div>
+						<br>	
+						<div class="fc fc-biggap">
+							<button class="carousel-button prev" onclick="changeSlide(-1)">&#10094;</button> 
+							<img src="./pics/spells.jpg" class="para-image sm-image" onclick="openSpell()">  
+							<button class="carousel-button next" onclick="changeSlide(1)">&#10095;</button> 
+						</div>
+						<br>
+						<div class="fc">
+							<input type="text" id="guessInput" class="clean-input" placeholder="故事中 ＊＊＊＊＊ 是？">
+							<button onclick="checkAnswer()" class="clean-input-btn">確認</button>
+						</div>
+						<br>
+					</div>
+				</div>
+			</div>
+
+
+
+			<!--  page 99 魔咒說明書 -->
+			<div id="page-div-99" class="content-area hide">
+				<div id="spellTable">
+				<table id="">
+				<tbody>
+                <tr><td>Accio</td><td>速速前</td><td>將心想中的物體迅速召喚到施咒者身邊。</td></tr>
+                <tr><td>Aguamenti</td><td>水水噴</td><td>從魔杖尖端召喚出乾淨可飲用的清水。</td></tr>
+                <tr><td>Alohomora</td><td>開鎖咒</td><td>解開未受魔法保護或結構簡單的門鎖。</td></tr>
+                <tr><td>Aparecium</td><td>現形咒</td><td>讓隱形文字重新顯現字跡的咒語</td></tr>
+                <tr><td>Ascendio</td><td>升升降</td><td>使施咒者者上升的咒語</td></tr>
+                <tr><td>Avada Kedavra</td><td>索命咒</td><td>使中咒者立即且無痛苦地死亡。</td></tr>
+                <tr><td>Banishing Charm</td><td>驅逐咒</td><td>與「速速前」相反，可讓施咒者心中所想的物件迅速遠離。</td></tr>
+                <tr><td>Capacious Extremis</td><td>無形伸展咒</td><td>可擴展物體的內部空間。</td></tr>
+                <tr><td>Colloportus</td><td>密密膠</td><td>用來鎖門的咒語</td></tr>
+                <tr><td>Confringo</td><td>爆炸咒</td><td>可以炸毁任何被擊中的物體。</td></tr>
+                <tr><td>Confundo</td><td>迷糊咒</td><td>能讓人變得迷糊，搞不清楚身邊發生的事情</td></tr>
+                <tr><td>Crucio</td><td>酷刑咒</td><td>使其中咒者產生激烈的抽搐與痙攣。</td></tr>
+                <tr><td>Deletrius</td><td>吹吹除</td><td>使煙霧消散的咒語</td></tr>
+                <tr><td>Densaugeo</td><td>涎涎牙</td><td>使中咒者的門牙以驚人的速度增長</td></tr>
+                <tr><td>Descendo</td><td>低低降</td><td>使目標物體或人向下移動的咒語。</td></tr>
+                <tr><td>Diffindo</td><td>切除咒</td><td>使東西突然迸裂開來的咒語</td></tr>
+                <tr><td>Duro</td><td>硬化咒</td><td>將物體變成石頭或使其變硬的變形咒語。</td></tr>
+                <tr><td>Enervate</td><td>復甦咒</td><td>用於喚醒被昏迷咒擊中或昏倒的人</td></tr>
+                <tr><td>Engorgio</td><td>暴食咒</td><td>使物體瞬間變大的咒語</td></tr>
+                <tr><td>Evanesco</td><td>消失咒</td><td>使物體完全消失的消失咒，是高級變形術的一種。</td></tr>
+                <tr><td>Expecto Patronum</td><td>護法咒</td><td>用來召喚出守護神，以驅趕催狂魔。</td></tr>
+                <tr><td>Expelliarmus</td><td>繳械咒</td><td>使對手手中的武器飛離其掌控。</td></tr>
+                <tr><td>Ferula</td><td>咕咕圈</td><td>路平教授用來固定榮恩斷腿時用的咒語。</td></tr>
+                <tr><td>Fianto Duri</td><td>固若金湯</td><td>創造強力防護屏障的咒語</td></tr>
+                <tr><td>Finite Incantatem</td><td>魔咒消</td><td>一個可以使其他魔法解除的咒語</td></tr>
+                <tr><td>Furnunculus</td><td>熔熔沸</td><td>使中咒者皮膚上長出又大又醜的疔瘡</td></tr>
+                <tr><td>Geminio</td><td>複製咒</td><td>創造原物複製品。</td></tr>
+                <tr><td>Impedimenta</td><td>障礙咒</td><td>可使攻擊者暫時凍結或使對手的攻擊速度變慢。</td></tr>
+                <tr><td>Imperio</td><td>蠻橫咒</td><td>可完全控制受害者的心智與行動。</td></tr>
+                <tr><td>Incarcerous</td><td>繩繩禁</td><td>召喚繩子綑綁目標的咒語</td></tr>
+                <tr><td>Incendio</td><td>生火咒</td><td>使魔杖尖端射出火焰，用來生火</td></tr>
+                <tr><td>Legilimens</td><td>破心術</td><td>侵入對方記憶或心智的咒語</td></tr>
+                <tr><td>Levicorpus</td><td>倒倒吊</td><td>使中咒者被倒吊在半空中。</td></tr>
+                <tr><td>Liberacorpus</td><td>退退降</td><td>倒倒吊咒的反咒。</td></tr>
+                <tr><td>Lumos</td><td>路摸思/魔杖照明咒</td><td>使魔杖發出亮光，照亮黑暗</td></tr>
+                <tr><td>Mobiliarbus</td><td>呼呼移</td><td>移動物體</td></tr>
+                <tr><td>Morsmordre</td><td>黑魔標記</td><td>召喚黑魔標記</td></tr>
+                <tr><td>Muffliato</td><td>嗡嗡鳴咒</td><td>在附近任何人的耳朵裡填入無法識別的蜂鳴聲，防止偷聽</td></tr>
+                <tr><td>Nox</td><td>魔杖熄滅咒</td><td>路摸思的反咒，用來熄滅魔杖尖端的光芒</td></tr>
+                <tr><td>Obliviate</td><td>遺忘記憶咒</td><td>用來抹除特定記憶</td></tr>
+                <tr><td>Oppugno</td><td>衝衝攻</td><td>驅使物體攻擊對方</td></tr>
+                <tr><td>Orchideous</td><td>噗噗蘭</td><td>使魔杖尖端射出一束花</td></tr>
+                <tr><td>Periculum</td><td>啪銳喀鑰</td><td>發射紅色火花作為求救信號</td></tr>
+                <tr><td>Point me</td><td>指引我方向/定向咒</td><td>使魔杖指向北方的導航咒語</td></tr>
+                <tr><td>Portus</td><td>港口現</td><td>將物體變成港口鑰，創造瞬間傳送裝置</td></tr>
+                <tr><td>Prior Incantato</td><td>呼呼前咒現</td><td>使魔杖倒帶並呈現先前施展過</td></tr>
+                <tr><td>Protean Charm</td><td>變化咒</td><td>將多個物體連接，一起統一變化的高級魔法</td></tr>
+                <tr><td>Protego</td><td>破心護</td><td>創造一個屏障來阻擋咒語攻擊</td></tr>
+                <tr><td>Protego Horribilis</td><td>破心護,強強厲威</td><td>標準護身咒的強化版本，提供針對黑魔法的強力防護</td></tr>
+                <tr><td>Protego Totalum</td><td>全全破心護</td><td>在住所或區域周圍創建長期全面保護。</td></tr>
+                <tr><td>Quietus</td><td>噓噓靜/悄聲咒</td><td>降低聲音，是擴音咒的反咒</td></tr>
+                <tr><td>Reducio</td><td>啾啾縮/收縮咒</td><td>使人或動物的身體縮小</td></tr>
+                <tr><td>Reducto</td><td>曝曝消/消除咒</td><td>將阻擋在前方的固體物炸開</td></tr>
+                <tr><td>Relashio</td><td>嘶嘶退</td><td>使魔杖射出火花，使對方退後</td></tr>
+                <tr><td>Rennervate</td><td>力力復/復甦咒</td><td>用來恢復精力或喚醒昏迷的人</td></tr>
+                <tr><td>Reparo</td><td>修復咒</td><td>修復損壞物品</td></tr>
+                <tr><td>Repello Muggletum</td><td>去去,麻瓜走</td><td>驅逐麻瓜，防止麻瓜誤入魔法世界。</td></tr>
+                <tr><td>Rictusempra</td><td>胳肢咒</td><td>使中咒者全身發癢，並捧腹大笑</td></tr>
+                <tr><td>Riddikulus</td><td>叱叱,荒唐</td><td>使幻形怪變成可笑的事物，並使其消失</td></tr>
+                <tr><td>Scourgify</td><td>滅滅淨/清潔咒</td><td>一個用來清理物品</td></tr>
+                <tr><td>Sectum Sempra</td><td>撕淌三步殺</td><td>在目標身上造成深層隱形劍狀傷口，是石內卜自創的黑魔法。</td></tr>
+                <tr><td>Serpensortia</td><td>蛇蛇攻</td><td>使魔杖射出一條蛇來攻擊目標</td></tr>
+                <tr><td>Silencio</td><td>默默靜/靜默咒</td><td>使對方無法發出聲音</td></tr>
+                <tr><td>Sonorus</td><td>哄哄響/擴音咒</td><td>擴大施咒者聲音</td></tr>
+                <tr><td>Specialis Revelio</td><td>原形立現</td><td>揭開施加在物體或魔藥上的任何咒語</td></tr>
+                <tr><td>Stupefy</td><td>昏迷咒</td><td>使對手陷入昏迷</td></tr>
+                <tr><td>Tarantallegra</td><td>塔朗泰拉跳</td><td>讓中咒者的雙腿不由自主地舞動</td></tr>
+                <tr><td>Tergeo</td><td>哆哆潔</td><td>清潔和乾燥物體表面</td></tr>
+                <tr><td>Vulnera Sanentur</td><td>速速癒合</td><td>專門治療深層傷口的如歌般咒語，撕淌三步殺的反咒。</td></tr>
+                <tr><td>Wingardium Leviosa</td><td>漂浮咒</td><td>讓物體漂浮在空中或緩緩飛過</td></tr>
+            </tbody>
+				</table>
+				</div>
+			</div>
+        </main>
+        
+    </div>
+    
+</body>
+
+<script>
+	var clickGuessTitleCount = 0;
+	var currentPage = 1;
+	var returnPage = 1;
+	var currentSlideIdx = 0;
+	var page4ImgSrc = ["./pics/renn/luwork.png", "./pics/renn/lutired.png", "./pics/renn/mangwork.png",
+		"./pics/renn/mangtired.png", "./pics/renn/together.png", "./pics/renn/charge.png",];
+	
+	// TODO test temp
+	goToPage(1);
+
+
+	document.getElementById('guessTitle').addEventListener('click', function() {
+		clickGuessTitleCount++;
+	    
+	    if (clickGuessTitleCount === 3) {
+	    	const userInput = prompt('請輸入一個數字：');
+	        
+	        const inputNumber = parseFloat(userInput);
+	        if (!isNaN(inputNumber)) {
+                console.log(`您輸入的數字是：${inputNumber}`); // 顯示抓取到的數字
+                goToPage(inputNumber-100);
+            }
+	        
+	        clickGuessTitleCount = 0; 
+	    }
+	});
+	
+	function goToPage(pageNo) {
+		if(pageNo === 1) {
+			document.getElementById('guessTitle').textContent = "Guess!";
+			document.getElementById("guessTitle").classList.remove("hide");
+		} else if(pageNo === 2) {
+			document.getElementById('guessTitle').textContent = "Congratulations!";
+			document.getElementById("guessTitle").classList.remove("hide");
+			showContentAnimation();
+		} else if(pageNo === 3) {
+			document.getElementById('guessTitle').textContent = "Rule";
+			document.getElementById("guessTitle").classList.remove("hide");
+			showContentAnimation();
+		} else if(pageNo === 4) {
+			document.getElementById('guessTitle').textContent = "Magic Test 1";
+			document.getElementById("guessTitle").classList.remove("hide");
+			changeSlide(0);
+			showContentAnimation();
+			
+		} else if(pageNo === 99) {
+			document.getElementById("guessTitle").classList.add("hide");
+			document.getElementById('guessTitle').textContent = "Spells";
+		} else {
+			return;
+		}
+		
+		commonGoPage(pageNo);
+	}
+	
+	function commonGoPage(pageNo) {
+		var leavePageId = "page-div-" + currentPage;
+		var goPageId = "page-div-" + pageNo;
+		
+		document.getElementById(leavePageId).classList.add("hide");
+		document.getElementById(goPageId).classList.remove("hide");
+
+		currentPage = pageNo;
+	}
+
+	
+	// ＝＝＝＝＝＝＝＝＝ 首頁 ＝＝＝＝＝＝＝＝＝ 
+	function checkAnswer() {
+		if(currentPage === 1) {
+			let userAnswer = document.querySelector("#page-div-1 #guessInput").value.trim();
+			if (userAnswer.toLowerCase() === "哈利波特" || userAnswer.toLowerCase() === "harrypotter") {
+				goToPage(2);
+				alert("Bingo ！!");
+			} else {
+				alert("再想想ㄅ ！!");
+			}
+		} else if(currentPage === 4) {
+			let userAnswer = document.querySelector('#page-div-4 #guessInput').value.trim();
+			if (userAnswer.toLowerCase() === "力力復" || userAnswer.toLowerCase() === "復甦咒" || userAnswer.toLowerCase() === "rennervate") {
+				// goToPage(2);
+				alert("太厲害了 ！!");
+			} else {
+				alert("再想想ㄅ ！!");
+			}
+		}
+	}
+	
+	// ＝＝＝＝＝＝＝＝＝ 第一頁 恭喜引言 ＝＝＝＝＝＝＝＝＝ 
+	function showContentAnimation() {
+		const items = document.querySelectorAll('.fade-in-item');
+	    
+	    // 設定動畫的持續時間和每行的延遲間隔 (單位: 秒)
+	    const animationDuration = 0.8; // 動畫持續 1 秒
+	    const delayIncrement = 0.6;    // 每行間隔 0.8 秒浮現
+	    
+	    // 從最後一個元素 (最
+	    // 由於 HTML 結構是從上到下，我們需要反轉這個陣列來計算延遲
+	    const reversedItems = Array.from(items).reverse();
+	    
+	    reversedItems.forEach((item, index) => {
+	        // 計算延遲時間 (從 0, 0.8s, 1.6s, 2.4s... 遞增)
+	        const delay = index * delayIncrement;
+	        
+	        // 套用 CSS 動畫樣式
+	        item.style.animation = `fadeInSlideUp ${animationDuration}s ease-out ${delay}s forwards`;
+	    });
+	}
+
+
+	
+	// ＝＝＝＝＝＝＝＝＝ 第四頁 出題 ＝＝＝＝＝＝＝＝＝ 
+	function changeSlide(direction) {
+		// direction 參數為 +1 (下一張) 或 -1 (上一張) 或 0 (起始)
+		if(direction == 0) {
+			currentSlideIdx = 0;
+		}else if(direction == -1 && currentSlideIdx == 0) {
+			currentSlideIdx = page4ImgSrc.length - 1;
+		} else if(direction == 1 && currentSlideIdx == (page4ImgSrc.length - 1)) {
+			currentSlideIdx = 0;
+		} else {
+			currentSlideIdx += direction; 
+		}
+		
+		document.querySelector('#page-div-4 .carousel-img').src = page4ImgSrc[currentSlideIdx];
+		document.querySelector('#page-div-4 .carousel-page').textContent = "# " + (currentSlideIdx + 1);
+	}
+
+
+	// ＝＝＝＝＝＝＝＝＝ 魔咒書 ＝＝＝＝＝＝＝＝＝ 
+	function openSpell() {
+		returnPage = currentPage;
+
+		const contentArea = event.currentTarget.closest('.content-area');
+		if (contentArea) {
+            // 隱藏該元素，通過添加 'hide' 類別來實現
+            // 假設您的 CSS 中有 .hide { display: none; }
+            contentArea.classList.add('hide'); 
+            
+            // 或者，直接操作 display 屬性來隱藏，如果沒有 .hide 類別：
+            // contentArea.style.display = 'none';
+            
+            console.log('成功隱藏 content-area 區塊');
+        } else {
+            console.error('未找到 class="content-area" 的父級元素。');
+        }
+
+		document.getElementById("closeBookButton").classList.remove("hide");
+		
+		goToPage(99);
+
+	}
+
+	function closeSpell() {
+		document.getElementById("closeBookButton").classList.add("hide");
+		
+		goToPage(returnPage);
+	}
+	
+</script>
+
+</html>
