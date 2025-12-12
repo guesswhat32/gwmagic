@@ -105,18 +105,23 @@
 						<p class="carousel-page" style="display: none;">#1</p>
 						<div class="carousel-container">
 							<div class="carousel-images">
-								<img src="" alt="Image 1" class="carousel-img">
+								<img src="./pics/renn/luwork.png" alt="Image 1" class="carousel-img">
+								<img src="./pics/renn/lutired.png" alt="Image 1" class="carousel-img opacity hide">
+								<img src="./pics/renn/mangwork.png" alt="Image 1" class="carousel-img opacity hide">
+								<img src="./pics/renn/mangtired.png" alt="Image 1" class="carousel-img opacity hide">
+								<img src="./pics/renn/together.png" alt="Image 1" class="carousel-img opacity hide">
+								<img src="./pics/renn/charge.png" alt="Image 1" class="carousel-img opacity hide">
 							</div>
 						</div>
 						<br>	
 						<div class="fc fc-biggap">
 							<button class="carousel-button prev" onclick="changeSlide(-1)">&#10094;</button> 
-							<img src="./pics/spells.jpg" class="para-image sm-image" onclick="goToPage(99)">  
+							<img src="./pics/spells.jpg" class="para-image sm-image" onclick="goToPage(99)">
 							<button class="carousel-button next" onclick="changeSlide(1)">&#10095;</button> 
 						</div>
 						<br>
 						<div class="fc">
-							<input type="text" id="guessInput" class="clean-input" placeholder="">
+							<input type="text" id="guessInput" class="clean-input" placeholder="請輸入魔咒">
 							<button onclick="checkAnswer()" class="clean-input-btn">GO</button>
 						</div>
 						<br>
@@ -257,9 +262,9 @@
 		} else if(pageNo == 4) {
 			document.getElementById('guessTitle').textContent = "TEST 1";
 			document.getElementById("guessTitle").classList.remove("hide");
-			changeSlide(0);
 			showContentAnimation();
-			
+
+			changeSlide(0);
 		} else if(pageNo == 99) {
 			document.getElementById("guessTitle").classList.add("hide");
 			document.getElementById("closeBookButton").classList.remove("hide");
@@ -325,25 +330,53 @@
 
 	
 	// ＝＝＝＝＝＝＝＝＝ 第四頁 出題 ＝＝＝＝＝＝＝＝＝ 
+	// function changeSlide(direction) {
+	// 	// direction 參數為 +1 (下一張) 或 -1 (上一張) 或 0 (起始)
+	// 	if(direction == 0) {
+	// 		currentSlideIdx = 0;
+	// 	}else if(direction == -1 && currentSlideIdx == 0) {
+	// 		currentSlideIdx = page4ImgSrc.length - 1;
+	// 	} else if(direction == 1 && currentSlideIdx == (page4ImgSrc.length - 1)) {
+	// 		currentSlideIdx = 0;
+	// 	} else {
+	// 		currentSlideIdx += direction; 
+	// 	}
+		
+	// 	document.querySelector('#page-div-4 .carousel-img').src = page4ImgSrc[currentSlideIdx];
+	// 	document.querySelector('#page-div-4 .carousel-page').textContent = "# " + (currentSlideIdx + 1);
+	// }
+
 	function changeSlide(direction) {
 		// direction 參數為 +1 (下一張) 或 -1 (上一張) 或 0 (起始)
-		if(direction == 0) {
-			currentSlideIdx = 0;
-		}else if(direction == -1 && currentSlideIdx == 0) {
-			currentSlideIdx = page4ImgSrc.length - 1;
-		} else if(direction == 1 && currentSlideIdx == (page4ImgSrc.length - 1)) {
-			currentSlideIdx = 0;
-		} else {
-			currentSlideIdx += direction; 
-		}
+
+		let imgs = document.querySelectorAll('#page-div-4 .carousel-img');
+		let totelImg = imgs.length;
+
 		
-		document.querySelector('#page-div-4 .carousel-img').src = page4ImgSrc[currentSlideIdx];
-		document.querySelector('#page-div-4 .carousel-page').textContent = "# " + (currentSlideIdx + 1);
+
+		if(direction == 0) {
+			// init
+			//currentSlideIdx = 0;
+
+		} else {
+			imgs[currentSlideIdx].classList.add("opacity");
+			imgs[currentSlideIdx].classList.add("hide");
+
+			if(direction == -1 && currentSlideIdx == 0) {
+				currentSlideIdx = totelImg - 1;
+			} else if(direction == 1 && currentSlideIdx == (totelImg - 1)) {
+				currentSlideIdx = 0;
+			} else {
+				currentSlideIdx += direction; 
+			}
+
+			imgs[currentSlideIdx].classList.remove("opacity");
+			imgs[currentSlideIdx].classList.remove("hide");
+		} 
 	}
 
 
 	// ＝＝＝＝＝＝＝＝＝ 魔咒書 ＝＝＝＝＝＝＝＝＝ 
-
 	function closeSpell() {
 		document.getElementById("closeBookButton").classList.add("hide");
 		
@@ -357,8 +390,6 @@
 			behavior: 'smooth' // 設置為 'smooth' 實現平滑滾動效果
 		});
 	}
-
-
 
 	// init
 	goToPage(currentPage);
