@@ -171,7 +171,7 @@ body, html {
 }
 .clean-input {
     padding: 0.5em;
-
+    font-size: 16px;
     height: 20px;
 }
 .clean-input-btn {
