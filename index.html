@@ -245,6 +245,7 @@
 		}
 		
 		commonGoPage(pageNo);
+		scrollToTop();
 	}
 	
 	function commonGoPage(pageNo) {
@@ -350,6 +351,14 @@
 		document.getElementById("closeBookButton").classList.add("hide");
 		
 		goToPage(returnPage);
+	}
+
+	function scrollToTop() {
+		window.scrollTo({
+			top: 0, // 垂直座標，0 表示頁面頂部
+			left: 0, // 水平座標，通常也是 0
+			behavior: 'smooth' // 設置為 'smooth' 實現平滑滾動效果
+		});
 	}
 	
 </script>
