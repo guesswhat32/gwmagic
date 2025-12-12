@@ -55,12 +55,13 @@ body, html {
 }
 
 .image-grid {
-    width: 80%; /* 網格佔據 content-area 寬度的 80% */
+    width: 100%; /* 網格佔據 content-area 寬度的 80% */
     display: grid;
     /* 設置 2x2 網格，每列和每行平均分配空間 */
-    grid-template-columns: 1fr 1fr 1fr 1fr; 
+    grid-template-columns: 1fr 1fr; 
     gap: 10px; /* 圖片之間的間距 */
     padding: 10px;
+    margin-bottom: 20px;
 }
 
 /* 4. 🌟 新增：網格圖片樣式 🌟 */
@@ -171,7 +172,8 @@ body, html {
 }
 .clean-input {
     padding: 0.5em;
-    font-size: 20px;
+    font-size: 24px;
+    width: 70%;
     height: 20px;
 }
 .clean-input-btn {
