@@ -70,7 +70,7 @@ body, html {
 }
 
 .image-grid {
-    width: 100%; /* 網格佔據 content-area 寬度的 80% */
+    width: 95%; /* 網格佔據 content-area 寬度的 80% */
     display: grid;
     /* 設置 2x2 網格，每列和每行平均分配空間 */
     grid-template-columns: 1fr 1fr; 
@@ -86,7 +86,7 @@ body, html {
     /* 確保圖片填滿網格區域並裁切多餘部分 */
     object-fit: contain; 
     border-radius: 6px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
 }
 
 #closeBookButton{
