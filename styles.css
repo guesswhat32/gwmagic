@@ -220,7 +220,8 @@ body, html {
     transition: background-color 0.3s; /* 增加懸停動畫效果 */
 }
 .clean-input-btn {
-    height: 40px;
+    height: 45px;
+    width: 50px;
     color: white;
     background-color: #1850b2de;
     border-radius: 8px;
@@ -230,7 +231,7 @@ body, html {
 .clean-input {
     padding: 0.5em;
     font-size: 24px;
-    width: 70%;
+    width: 60%;
     height: 20px;
 }
 
