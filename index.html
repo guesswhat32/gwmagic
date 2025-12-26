@@ -127,6 +127,31 @@
 				</div>
 			</div>
 
+			<!--  page 5 修復題解答 -->
+			<div id="page-div-5" class="content-area hide">
+        		<div id="t" class="fade-in-item">
+					<div class="fc">答對！ 愛神使用的咒語就是</div>
+					<div class="fc">「Rennervate / 力力復」<br><br></div>
+					<div class="fc">謝謝妳～我的充電<span class="big-txt pink-txt">芒</span> 寶</div>
+					<div class="fc">妳總讓我從疲憊中恢復元氣 🥰 <br><br></div>
+					<!-- <div class="fc">me也好開心、好幸福</div> -->
+					<!-- <div class="fc"><div>可以成為妳的充電</div><span class="big-txt pink-txt">爐</span>寶❤️</div> -->
+					<div class="fc">不論我們今天過得開心或難過</div>
+					<div class="fc">見到對方、咚咚咚地奔向彼此</div>
+					<div class="fc">抱抱、親親、拍拍、抓抓</div>
+					<div class="fc">聊不停、吃不停的每個小時光<br><br></div>
+					<div class="fc">這樣有妳的日常</div>
+					<div class="fc">對我來說就是棒的事<br><br></div>
+					<div class="fc">以後的日子</div>
+					<div class="fc">我也會當妳最棒的充電<span class="big-txt pink-txt">爐</span>寶！😘</div>
+					
+					<div style="text-align: center; margin-top: 10px;">
+						<button id="startButton" class="bigButton" onclick="goToPage(6)">
+							Next
+						</button>
+					</div>
+				</div>
+        	</div>
 
 
 			<!--  page 99 魔咒說明書 -->
@@ -263,6 +288,10 @@
 			showContentAnimation();
 
 			changeSlide(0);
+		} else if(pageNo == 5) {
+			document.getElementById('guessTitle').textContent = "Congratulations!";
+			document.getElementById("guessTitle").classList.remove("hide");
+			showContentAnimation();
 		} else if(pageNo == 99) {
 			document.getElementById("guessTitle").classList.add("hide");
 			document.getElementById("closeBookButton").classList.remove("hide");
@@ -304,7 +333,8 @@
 		} else if(currentPage == 4) {
 			let userAnswer = document.querySelector('#page-div-4 #guessInput').value.trim();
 			if (userAnswer.toLowerCase() === "力力復" || userAnswer.toLowerCase() === "復甦咒" || userAnswer.toLowerCase() === "rennervate") {
-				alert("太厲害了 ！!");
+				goToPage(5);
+				alert("Bingo ！!");
 			} else {
 				alert("再想想ㄅ ！!");
 			}
