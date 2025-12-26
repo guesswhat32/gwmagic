@@ -210,7 +210,7 @@ body, html {
 }
 
 .ssm-image {
-	height: 4em;
+	height: 60px;
 }
 
 /* 按鈕 */
@@ -232,6 +232,7 @@ body, html {
     background-color: #1850b2de;
     border-radius: 8px;
     border: 0px;
+    font-size: 20px;
 }
 
 .clean-input {
