@@ -134,16 +134,15 @@
 					<div class="fc">「Rennervate / 力力復」<br><br></div>
 					<div class="fc">謝謝妳～我的充電<span class="big-txt pink-txt">芒</span> 寶</div>
 					<div class="fc">妳總讓我從疲憊中恢復元氣 🥰 <br><br></div>
-					<!-- <div class="fc">me也好開心、好幸福</div> -->
-					<!-- <div class="fc"><div>可以成為妳的充電</div><span class="big-txt pink-txt">爐</span>寶❤️</div> -->
 					<div class="fc">不論今天過得開心或難過</div>
 					<div class="fc">見到妳、咚咚咚地奔向妳</div>
 					<div class="fc">抱抱、親親、拍拍、抓抓</div>
 					<div class="fc">聊不停、吃不停的每個小時光<br><br></div>
 					<div class="fc">這樣有妳的日常</div>
-					<div class="fc">對我來說就是棒的事<br><br></div>
+					<div class="fc">對我來說就是幸福的事<br><br></div>
 					<div class="fc">以後的日子</div>
 					<div class="fc">我也要當妳最棒的充電<span class="big-txt pink-txt">爐</span>寶！😘</div>
+					<div class="fc">給妳滿滿的愛跟能量❤️</div>
 					
 					<div style="text-align: center; margin-top: 10px;">
 						<button id="startButton" class="bigButton" onclick="goToPage(6)">
@@ -153,6 +152,62 @@
 				</div>
         	</div>
 
+			<!--  page 6 跳舞題 -->
+        	<div id="page-div-6" class="content-area hide">
+        		<div id="t" class="fade-in-item">
+					<div class="fr">
+						<p class="carousel-page" style="display: none;">#1</p>
+						<div class="carousel-container">
+							<div class="carousel-images">
+								<img src="./pics/dance/dance_1.png" alt="Image 1" class="carousel-img">
+								<img src="./pics/dance/dance_2.png" alt="Image 1" class="carousel-img opacity hide">
+								<img src="./pics/dance/dance_3.png" alt="Image 1" class="carousel-img opacity hide">
+							</div>
+						</div>
+						<br>	
+						<div class="fc fc-biggap">
+							<button class="carousel-button prev" onclick="changeSlide2(-1)">&#10094;</button> 
+							<img src="./pics/spells.jpg" class="para-image ssm-image" onclick="goToPage(99)">
+							<button class="carousel-button next" onclick="changeSlide2(1)">&#10095;</button> 
+						</div>
+						<br>
+						<div class="fc">
+							<input type="text" id="guessInput" class="clean-input" placeholder=" ＊＊＊＊＊ 是？">
+							<button onclick="checkAnswer()" class="clean-input-btn">GO</button>
+						</div>
+						<br>
+					</div>
+				</div>
+			</div>
+
+			<!--  page 7 跳物題解答 -->
+			<div id="page-div-7" class="content-area hide">
+        		<div id="t" class="fade-in-item">
+					<div class="fc">答對！ 愛神使用的咒語就是</div>
+					<div class="fc">「Tarantallegra / 塔朗泰拉跳」<br><br></div>
+					<div class="fc">從一開始欣賞妳獨自漫舞<span class="big-txt">💃🏻</span></div>
+					<div class="fc">到被逼著一起跳<span class="big-txt">👯</span></div>
+					<div class="fc">到現在自己也不自覺地開始跳舞<span class="big-txt">🙉</span><br><br></div>
+					<div class="fc">跟妳在一起，待在妳身邊的我</div>
+					<div class="fc">開心又自在，我好喜歡好喜歡跟妳待著</div>
+					<div class="fc">融入妳的 chill ～ 搖搖擺擺<br><br></div>
+					<div class="fc">以後的日子</div>
+					<div class="fc">我也要當讓妳最放鬆的爐子</div>
+					<div class="fc">一起編曲、編舞</div>
+					<div class="fc">牽手跳出屬於我們的人生<span class="big-txt">👯</span></div>
+					
+					<div style="text-align: center; margin-top: 10px;">
+						<button id="startButton" class="bigButton" onclick="goToPage(8)">
+							下一關
+						</button>
+					</div>
+				</div>
+        	</div>
+
+					<!-- <div class="fc">接住彼此的煩惱</div> -->
+
+					<!-- <div class="fc">讓我很放心地與妳訴說我的焦慮、煩惱</div>
+					<div class="fc">在阿焦霸台的時候陪陪我、妳的溫暖、智慧、幽默總是我最安心的存在<br><br></div> -->
 
 			<!--  page 99 魔咒說明書 -->
 			<div id="page-div-99" class="spell-area hide">
@@ -240,9 +295,6 @@
 </body>
 
 <script>
-	// TODO localStorage 防止按到重新整理
-
-
 	var clickGuessTitleCount = 0;
 	var currentPage = localStorage.getItem('nowPage') == null ? 1 : localStorage.getItem('nowPage');
 	var returnPage = 1;
@@ -289,7 +341,17 @@
 
 			changeSlide(0);
 		} else if(pageNo == 5) {
-			document.getElementById('guessTitle').textContent = "Congratulations!";
+			document.getElementById('guessTitle').textContent = "第一關詳解";
+			document.getElementById("guessTitle").classList.remove("hide");
+			showContentAnimation();
+		} else if(pageNo == 6) {
+			document.getElementById('guessTitle').textContent = "第二關";
+			document.getElementById("guessTitle").classList.remove("hide");
+			showContentAnimation();
+
+			changeSlide(0);
+		} else if(pageNo == 7) {
+			document.getElementById('guessTitle').textContent = "第二關詳解";
 			document.getElementById("guessTitle").classList.remove("hide");
 			showContentAnimation();
 		} else if(pageNo == 99) {
@@ -338,6 +400,14 @@
 			} else {
 				alert("再想想ㄅ ！!");
 			}
+		} else if(currentPage == 6) {
+			let userAnswer = document.querySelector('#page-div-6 #guessInput').value.trim();
+			if (userAnswer.toLowerCase() === "塔朗泰拉跳" || userAnswer.toLowerCase() === "tarantallegra") {
+				goToPage(7);
+				alert("Bingo ！!");
+			} else {
+				alert("再想想ㄅ ！!");
+			}
 		}
 	}
 	
@@ -355,33 +425,37 @@
 	    });
 	}
 
-
-	
 	// ＝＝＝＝＝＝＝＝＝ 第四頁 出題 ＝＝＝＝＝＝＝＝＝ 
-	// function changeSlide(direction) {
-	// 	// direction 參數為 +1 (下一張) 或 -1 (上一張) 或 0 (起始)
-	// 	if(direction == 0) {
-	// 		currentSlideIdx = 0;
-	// 	}else if(direction == -1 && currentSlideIdx == 0) {
-	// 		currentSlideIdx = page4ImgSrc.length - 1;
-	// 	} else if(direction == 1 && currentSlideIdx == (page4ImgSrc.length - 1)) {
-	// 		currentSlideIdx = 0;
-	// 	} else {
-	// 		currentSlideIdx += direction; 
-	// 	}
-		
-	// 	document.querySelector('#page-div-4 .carousel-img').src = page4ImgSrc[currentSlideIdx];
-	// 	document.querySelector('#page-div-4 .carousel-page').textContent = "# " + (currentSlideIdx + 1);
-	// }
-
 	function changeSlide(direction) {
 		// direction 參數為 +1 (下一張) 或 -1 (上一張) 或 0 (起始)
-
 		let imgs = document.querySelectorAll('#page-div-4 .carousel-img');
 		let totelImg = imgs.length;
+		if(direction == 0) {
+			// init
+			//currentSlideIdx = 0;
 
-		
+		} else {
+			imgs[currentSlideIdx].classList.add("opacity");
+			imgs[currentSlideIdx].classList.add("hide");
 
+			if(direction == -1 && currentSlideIdx == 0) {
+				currentSlideIdx = totelImg - 1;
+			} else if(direction == 1 && currentSlideIdx == (totelImg - 1)) {
+				currentSlideIdx = 0;
+			} else {
+				currentSlideIdx += direction; 
+			}
+
+			imgs[currentSlideIdx].classList.remove("opacity");
+			imgs[currentSlideIdx].classList.remove("hide");
+		} 
+	}
+
+	// ＝＝＝＝＝＝＝＝＝ 第六頁 出題 ＝＝＝＝＝＝＝＝＝ 
+	function changeSlide2(direction) {
+		// direction 參數為 +1 (下一張) 或 -1 (上一張) 或 0 (起始)
+		let imgs = document.querySelectorAll('#page-div-6 .carousel-img');
+		let totelImg = imgs.length;
 		if(direction == 0) {
 			// init
 			//currentSlideIdx = 0;
