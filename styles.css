@@ -229,7 +229,14 @@ body, html {
     row-gap: 1px;
     align-items: center;
 }
-
+.fr-para {
+    display: flex;
+    flex-direction: column;
+    row-gap: 4px;
+}
+.text-para {
+    height: 28px;
+}
 .hide {
 	display: none;
 }
