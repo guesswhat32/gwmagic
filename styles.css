@@ -29,6 +29,10 @@ body, html {
 
 #guessTitle {
     margin-top: 0;
+    margin-bottom: 8px;
+}
+.period-mg {
+    margin-bottom: 12px;
 }
 
 /* 3. 標題樣式 */
@@ -229,13 +233,20 @@ body, html {
     row-gap: 1px;
     align-items: center;
 }
+.fr-pic-q {
+    display: flex;
+    flex-direction: column;
+    row-gap: 18px;
+    align-items: center;
+}
 .fr-para {
     display: flex;
     flex-direction: column;
-    row-gap: 4px;
+    /* row-gap: 4px; */
 }
 .text-para {
     height: 28px;
+    color: #555;
 }
 .hide {
 	display: none;
@@ -249,12 +260,24 @@ body, html {
 .pink-txt {
 	color: #e882d8;
 }
+.red-txt {
+    color: red;
+}
+.orange-txt {
+    color: #df8404;
+}
+.spell-txt {
+    color: #6d1609;
+}
 .para-image {
 	object-fit: contain;
 	height: 10em;
 	/* width: 100%; */
 }
-
+.del-style {
+    text-decoration-thickness: 2px;
+    text-decoration-color: red;
+}
 .sm-image {
 	height: 5em;
 }

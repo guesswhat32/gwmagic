@@ -39,14 +39,12 @@
 			<!--  page 2 恭喜參加求婚 -->
         	<div id="page-div-2" class="content-area hide">
         		<div id="t" class="fade-in-item">
-					<div class="fc">
-						恭喜妳！ 成功開啟 ㄑㄏ 魔法試煉 ❤️
+					<div class="fr-para">
+						<div class="fc text-para">恭喜妳！ 成功開啟 ㄑㄏ 魔法試煉 ❤️</div>
+						<div class="fc text-para">接下來，妳將成為哈利波... <span class="big-txt pink-txt">芒</span> ！</div>
+						<br/>
 					</div>
-					<div class="fc">
-						<div>
-							接下來，妳將成為哈利波... <span class="big-txt pink-txt">芒</span> ！<br><br>
-						</div>
-					</div>
+
 					<div class="fc">
 						<img src="./pics/mangPerson.png" class="para-image"> <br>
 						<div class="fr-para">
@@ -75,18 +73,20 @@
 			<!--  page 3 遊戲規則 -->
         	<div id="page-div-3" class="content-area hide">
         		<div id="t" class="fade-in-item">
-					首先，妳需要通過三個魔咒測試<br><br>
-					根據不同情境<br>
-					回答使用的魔咒為何<br><br>
+					<div class="fr-para">
+						<div class="fc text-para">首先，妳需要通過三個魔咒測試</div>
+						<div class="fc text-para period-mg">回答故事中使用的魔咒</div>
+					</div>
+					<br>
 					<div class="fc">
-						<div>
-							妳可以隨時點擊本書 ➡️  <br>
-							觀看魔咒說明
+						<div class="fr-para">
+							<div class="fc text-para">妳可以隨時點擊本書 ➡️  </div>
+							<div class="fc text-para period-mg">觀看魔咒說明</div>
 						</div>
 						<img src="./pics/spells.jpg" class="para-image sm-image" onclick="goToPage(99)">  <br>
 					</div>
 					<br>
-					準備好了嗎？<br>
+					<div class="fc text-para">準備好了嗎？</div>
 
 					<div style="text-align: center; margin-top: 25px;">
 						<button id="startButton" class="bigButton" onclick="goToPage(4)">
@@ -99,7 +99,7 @@
 			<!--  page 4 修復題 -->
         	<div id="page-div-4" class="content-area hide">
         		<div id="t" class="fade-in-item">
-					<div class="fr">
+					<div class="fr-pic-q">
 						<p class="carousel-page" style="display: none;">#1</p>
 						<div class="carousel-container">
 							<div class="carousel-images">
@@ -111,18 +111,15 @@
 								<img src="./pics/renn/charge.png" alt="Image 1" class="carousel-img opacity hide">
 							</div>
 						</div>
-						<br>	
 						<div class="fc fc-biggap">
 							<button class="carousel-button prev" onclick="changeSlide(-1)">&#10094;</button> 
 							<img src="./pics/spells.jpg" class="para-image ssm-image" onclick="goToPage(99)">
 							<button class="carousel-button next" onclick="changeSlide(1)">&#10095;</button> 
 						</div>
-						<br>
 						<div class="fc">
 							<input type="text" id="guessInput" class="clean-input" placeholder=" ＊＊＊＊＊ 是？">
 							<button onclick="checkAnswer()" class="clean-input-btn">GO</button>
 						</div>
-						<br>
 					</div>
 				</div>
 			</div>
@@ -130,20 +127,21 @@
 			<!--  page 5 修復題解答 -->
 			<div id="page-div-5" class="content-area hide">
         		<div id="t" class="fade-in-item">
-					<div class="fc">答對！ 愛神使用的咒語就是</div>
-					<div class="fc">「Rennervate / 力力復」<br><br></div>
-					<div class="fc">謝謝妳～我的充電<span class="big-txt pink-txt">芒</span> 寶</div>
-					<div class="fc">妳總讓我從疲憊中恢復元氣<span class="big-txt">🥰</span><br><br></div>
-					<div class="fc">不論今天過得開心或難過</div>
-					<div class="fc">見到妳、咚咚咚地奔向妳</div>
-					<div class="fc">抱抱、親親、拍拍、抓抓</div>
-					<div class="fc">聊不停、吃不停的每個小時光<br><br></div>
-					<!-- <div class="fc">這樣有妳的日常</div> -->
-					<div class="fc">這樣有妳的日常，對我來說就是幸福的事<br><br></div>
-					<div class="fc">以後的日子</div>
-					<div class="fc">我也要當妳最棒的充電<span class="big-txt pink-txt">爐</span>寶！<span class="big-txt">😘</span></div>
-					<div class="fc">給妳滿滿的愛跟能量<span class="big-txt">❤️</span></div>
-					
+					<div class="fr-para">
+						<div class="fc text-para">答對！ 愛神使用的咒語就是</div>
+						<div class="fc text-para period-mg spell-txt">「Rennervate / 力力復」</div>
+						<div class="fc text-para">謝謝妳～我的充電<span class="big-txt pink-txt">芒</span> 寶</div>
+						<div class="fc text-para period-mg">妳總讓我從疲憊中恢復元氣<span class="big-txt">🥰</span></div>
+						<div class="fc text-para">不論今天過得開心或難過</div>
+						<div class="fc text-para">見到妳、咚咚咚奔向妳</div>
+						<div class="fc text-para period-mg">抱抱、親親、拍拍、抓抓</div>
+						<!-- <div class="fc text-para period-mg">聊不停、吃不停的每個小時光</div> -->
+						 <div class="fc text-para"><span class="orange-txt">這樣有妳的日常</span></div>
+						<div class="fc text-para period-mg"><span class="orange-txt">對我來說就是最幸福的事</span></div>
+						<!-- <div class="fc text-para">以後的日子</div>
+						<div class="fc text-para">我也要當妳最棒的充電<span class="big-txt pink-txt">爐</span>寶！<span class="big-txt">😘</span></div>
+						<div class="fc text-para">給妳滿滿的愛跟能量<span class="big-txt">❤️</span></div> -->
+					</div>
 					<div style="text-align: center; margin-top: 10px;">
 						<button id="startButton" class="bigButton" onclick="goToPage(6)">
 							下一關
@@ -155,7 +153,7 @@
 			<!--  page 6 跳舞題 -->
         	<div id="page-div-6" class="content-area hide">
         		<div id="t" class="fade-in-item">
-					<div class="fr">
+					<div class="fr-pic-q">
 						<p class="carousel-page" style="display: none;">#1</p>
 						<div class="carousel-container">
 							<div class="carousel-images">
@@ -164,18 +162,15 @@
 								<img src="./pics/dance/dance_3.png" alt="Image 1" class="carousel-img opacity hide">
 							</div>
 						</div>
-						<br>	
 						<div class="fc fc-biggap">
 							<button class="carousel-button prev" onclick="changeSlide2(-1)">&#10094;</button> 
 							<img src="./pics/spells.jpg" class="para-image ssm-image" onclick="goToPage(99)">
 							<button class="carousel-button next" onclick="changeSlide2(1)">&#10095;</button> 
 						</div>
-						<br>
 						<div class="fc">
 							<input type="text" id="guessInput" class="clean-input" placeholder=" ＊＊＊＊＊ 是？">
 							<button onclick="checkAnswer()" class="clean-input-btn">GO</button>
 						</div>
-						<br>
 					</div>
 				</div>
 			</div>
@@ -183,18 +178,18 @@
 			<!--  page 7 跳舞題解答 -->
 			<div id="page-div-7" class="content-area hide">
         		<div id="t" class="fade-in-item">
-					<div class="fc">答對！ 愛神使用的咒語就是</div>
-					<div class="fc">「Tarantallegra / 塔朗泰拉跳」<br><br></div>
-					<div class="fc">從一開始欣賞妳獨自漫舞<span class="big-txt">💃🏻</span></div>
-					<div class="fc">到被逼著一起跳<span class="big-txt">👯</span></div>
-					<div class="fc">到現在自己也不自覺地開始跳舞<span class="big-txt">🙉</span><br><br></div>
-					<div class="fc">跟妳在一起，待在妳身邊的我</div>
-					<div class="fc">開心又自在，我好喜歡好喜歡跟妳待著</div>
-					<div class="fc">融入妳的 chill ～ 搖搖擺擺<br><br></div>
-					<div class="fc">以後的日子</div>
-					<div class="fc">我也要當妳的 chill 爐子</div>
-					<div class="fc">一起編曲、編舞我們的生活<span class="big-txt">🥁🤹🏻‍♀️</span></div>
-					
+					<div class="fr-para">
+						<div class="fc text-para">答對！ 愛神使用的咒語就是</div>
+						<div class="fc text-para period-mg spell-txt">「Tarantallegra / 塔朗泰拉跳」</div>
+						<div class="fc text-para">從一開始欣賞妳獨自漫舞<span class="big-txt">💃🏻</span></div>
+						<div class="fc text-para">到被逼著一起跳<span class="big-txt">👯</span></div>
+						<div class="fc period-mg text-para">到現在 me也不自覺地開始跳舞<span class="big-txt">🙉</span></div>
+						<div class="fc text-para period-mg orange-txt">待在妳身邊的我，無敵開心又自在</div>
+						<div class="fc text-para">好喜歡妳的 chill & cool～</div>
+						<!-- <div class="fc text-para">以後的日子</div>
+						<div class="fc text-para">我也要當妳的 chill 爐子</div> -->
+						<div class="fc text-para">一起歌舞生活<span class="big-txt">🥁🤹🏻‍♀️</span></div>
+					</div>
 					<div style="text-align: center; margin-top: 10px;">
 						<button id="startButton" class="bigButton" onclick="goToPage(8)">
 							下一關
@@ -206,7 +201,7 @@
 			<!--  page 8 護法題 -->
         	<div id="page-div-8" class="content-area hide">
         		<div id="t" class="fade-in-item">
-					<div class="fr">
+					<div class="fr-pic-q">
 						<p class="carousel-page" style="display: none;">#1</p>
 						<div class="carousel-container">
 							<div class="carousel-images">
@@ -216,18 +211,15 @@
 								<img src="./pics/patronum/patronum_4.png" alt="Image 1" class="carousel-img opacity hide">
 							</div>
 						</div>
-						<br>	
 						<div class="fc fc-biggap">
 							<button class="carousel-button prev" onclick="changeSlide3(-1)">&#10094;</button> 
 							<img src="./pics/spells.jpg" class="para-image ssm-image" onclick="goToPage(99)">
 							<button class="carousel-button next" onclick="changeSlide3(1)">&#10095;</button> 
 						</div>
-						<br>
 						<div class="fc">
 							<input type="text" id="guessInput" class="clean-input" placeholder=" ＊＊＊＊＊ 是？">
 							<button onclick="checkAnswer()" class="clean-input-btn">GO</button>
 						</div>
-						<br>
 					</div>
 				</div>
 			</div>
@@ -235,18 +227,17 @@
 			<!--  page 9 護法題解答 -->
 			<div id="page-div-9" class="content-area hide">
         		<div id="t" class="fade-in-item">
-					<div class="fc">答對！ 爐子心中呼喊的咒語就是</div>
-					<div class="fc">「Expecto Patronum / 護法咒」<br><br></div>
-					<div class="fc">在腦袋裡、生活裡遇到催狂魔的時候</div>
-					<div class="fc">妳的陪伴、溫暖、智慧、<del>幽默</del> 搞笑<span class="big-txt">🐒</span></div>
-					<div class="fc">總是我最最安心的存在</div>
-					<div class="fc">我可以很放心地</div>
-					<div class="fc">與妳訴說我的脆弱、焦慮、煩惱<br><br></div>
-					<div class="fc">也謝謝妳陪我成長、變聰明<br><br></div>
-					<div class="fc">以後的日子</div>
-					<div class="fc">我也要當妳最可靠的護法<span class="big-txt">💪🏻</span></div>
-					<div class="fc">守護、接住妳的一切 <span class="big-txt">🙋🏻‍♀️🙆🏻‍♀️</span></div>
-					
+					<div class="fr-para">
+						<div class="fc text-para">答對！ 爐子心中呼喊的咒語就是</div>
+						<div class="fc text-para spell-txt period-mg">「Expecto Patronum / 護法咒」</div>
+						<div class="fc text-para period-mg">腦袋裡、生活中，遇到催狂魔的時候</div>
+						<div class="fc text-para orange-txt">妳的陪伴、溫暖、智慧、<del class="del-style">幽默</del> 搞笑<span class="big-txt">🐒</span></div>
+						<div class="fc text-par orange-txt period-mg">總是我最最安心的存在</div>
+						<!-- <div class="fc text-para ">我可以很放心的跟妳訴說任何事</div> -->
+						<div class="fc text-para ">謝謝妳陪我成長、變聰明</div>
+						<div class="fc text-para">我也要當妳最可靠的護法爐<span class="big-txt">💪🏻</span></div>
+						<div class="fc text-para">守護、接住妳的一切<span class="big-txt">🙋🏻‍♀️🙆🏻‍♀️</span></div>
+					</div>
 					<div style="text-align: center; margin-top: 10px;">
 						<button id="startButton" class="bigButton" onclick="goToPage(10)">
 							完成魔咒挑戰
