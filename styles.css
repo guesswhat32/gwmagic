@@ -169,6 +169,16 @@ body, html {
     border-radius: 4px;
 }
 
+#vow-div {
+    height: 370px;
+    overflow-y: scroll;
+    background-color: #ea98cf21;;
+    padding: 20px 10px;
+    border-radius: 12px;
+    border: #c72781;
+    border-style: solid;
+}
+
 
 /* 共同可用 */
 .fc {
