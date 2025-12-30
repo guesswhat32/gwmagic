@@ -94,7 +94,6 @@ body, html {
     /* 確保圖片填滿網格區域並裁切多餘部分 */
     object-fit: cover; 
     border-radius: 6px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
     border-style: solid;
 }
 .image-grid-5 {
@@ -104,6 +103,8 @@ body, html {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
     gap: 10px; /* 圖片之間的間距 */
     padding: 10px 10px 0px 10px;
+    justify-items: center;
+    justify-self: anchor-center;
 }
 .image-grid-5-m {
     width: 95%; /* 網格佔據 content-area 寬度的 80% */
