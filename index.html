@@ -192,7 +192,7 @@
 					<div class="fc">開心又自在，我好喜歡好喜歡跟妳待著</div>
 					<div class="fc">融入妳的 chill ～ 搖搖擺擺<br><br></div>
 					<div class="fc">以後的日子</div>
-					<div class="fc">我也要當讓妳的 chill 爐子</div>
+					<div class="fc">我也要當妳的 chill 爐子</div>
 					<div class="fc">一起編曲、編舞我們的生活<span class="big-txt">🥁🤹🏻‍♀️</span></div>
 					
 					<div style="text-align: center; margin-top: 10px;">
@@ -285,27 +285,30 @@
 						<div class="fc">要跟對方結婚呢！<span class="big-txt">👰🏻‍♀️❤️👰🏻‍♀️</span><br><br></div>
 						<div class="fc">我喜歡跟妳聊天、吃東西、載歌載舞</div>
 						<div class="fc">抱緊緊、還有好多好多好多！</div>
-						<div class="fc">輕輕地～ 慢慢地～ （like 我們的家規<span class="big-txt">🌝</span>)</div>
+						<div class="fc">輕輕地～ 慢慢地～</div>
+						<div class="fc">（like 我們的家規<span class="big-txt">🌝</span>)</div>
 						<div class="fc">不知不覺眼裡都是滿版的芒芒芒！<br><br></div>
 						<div class="fc">喜歡跟妳規劃未來、佈置我們的家</div>
 						<div class="fc">討論什麼家電是必須<span class="big-txt">🤨</span></div>
 						<div class="fc">喜歡跟妳開發新美食、一起吃吃吃</div>
 						<div class="fc">再摸摸對方的肚子<span class="big-txt">🤰🏻</span></div>
-						<div class="fc">想跟妳有我們的孩子或狗、或 one day both!</div>
+						<div class="fc">想跟妳有我們的孩子或狗</div>
+						<div class="fc">或 one day both！</div>
 						<div class="fc">想跟妳世界各地閑晃、大開眼界</div>
 						<div class="fc">笑對方太愛買，笑我們總是逛的好慢</div>
 						<div class="fc">然後永遠一起回家<span class="big-txt">🏠</span><br><br></div>
 						<div class="fc">妳跟我求婚的日子是4/4</div>
-						<div class="fc">我們未來44順心、4季平安... （族繁不及備載</div>
+						<div class="fc">我們「44」順心、「4」季平安...等等</div>
 						<div class="fc">今天是 1/17</div>
-						<div class="fc">我們未來都「 一～起」！</div>
+						<div class="fc">我們「一～起」！</div>
 						<div class="fc">心裡上、物理上我們都喜歡一起<span class="big-txt">😘</span></div>
 						<div class="fc">唸起來也表示「依依妻」 歐～</div>
 						<div class="fc">我們都喜歡當小鳥依人，依著老婆呢<span class="big-txt">👩🏻‍❤️‍💋‍👩🏻 </span></div>
 						<div class="fc">爐子丁芒真會挑日子！<span class="big-txt">🙌🏻</span></div>
 						<div class="fc">歐齁齁齁齁齁<span class="big-txt">🤭🤭</span><br><br></div>
 						<div class="fc">下一步，請跟妳太太抱抱撒嬌</div>
-						<div class="fc">取得這次的通關密語吧！</div>
+						<div class="fc">取得這次的通關密語</div>
+						<div class="fc">完成接下來的任務</div>
 					</div>
 
 					<br>
@@ -316,6 +319,36 @@
 					<br>
 				</div>
         	</div>
+
+			<!--  page 12 解地點 -->
+			<div id="page-div-12" class="content-area hide">
+        		<div id="t" class="fade-in-item">
+
+
+
+					<div class="image-grid-5">
+						<img src="./pics/royal/r3.png" class="grid-image-5">
+						<img src="./pics/royal/o.png" class="grid-image-5">
+						<img src="./pics/royal/v.webp" class="grid-image-5">
+						<img src="./pics/royal/a2.png" class="grid-image-5">
+						<img src="./pics/royal/l.webp" class="grid-image-5">
+					</div>
+					<div class="image-grid-5-m">
+						<div class=""></div>
+						<div class=""></div>
+						<div id="y-div"><div>|</div></div>
+						<div class=""></div>
+						<div class=""></div>
+					</div>
+					<div class="fc">
+						<input type="text" id="guessInput" class="clean-input" placeholder="請輸入人名">
+						<div style="text-align: center; margin-top: 0px;">
+							<button class="clean-input-btn" onclick="checkAnswer()">GO</button>
+						</div>
+					</div>
+				</div>
+        	</div>
+
 
 			<!--  page 99 魔咒說明書 -->
 			<div id="page-div-99" class="spell-area hide">
@@ -477,7 +510,11 @@
 			document.getElementById("guessTitle").classList.remove("hide");
 			showContentAnimation();
 		} else if(pageNo == 11) {
-			document.getElementById('guessTitle').textContent = "請跟我結婚🌹";
+			document.getElementById('guessTitle').textContent = "結婚🌹結婚🌹結婚🌹";
+			document.getElementById("guessTitle").classList.remove("hide");
+			showContentAnimation();
+		} else if(pageNo == 12) {
+			document.getElementById('guessTitle').textContent = "魔法世界常識測驗";
 			document.getElementById("guessTitle").classList.remove("hide");
 			showContentAnimation();
 		} else if(pageNo == 99) {

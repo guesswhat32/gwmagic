@@ -88,6 +88,37 @@ body, html {
     border-radius: 6px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
 }
+.grid-image-5 {
+    width: 100%;
+    height: 100%;
+    /* 確保圖片填滿網格區域並裁切多餘部分 */
+    object-fit: cover; 
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+    border-style: solid;
+}
+.image-grid-5 {
+    width: 95%; /* 網格佔據 content-area 寬度的 80% */
+    display: grid;
+    /* 設置 2x2 網格，每列和每行平均分配空間 */
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
+    gap: 10px; /* 圖片之間的間距 */
+    padding: 10px 10px 0px 10px;
+}
+.image-grid-5-m {
+    width: 95%; /* 網格佔據 content-area 寬度的 80% */
+    display: grid;
+    /* 設置 2x2 網格，每列和每行平均分配空間 */
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
+    gap: 10px; /* 圖片之間的間距 */
+    padding: 0 10px;
+    margin-bottom: 20px;
+}
+#y-div {
+    display: flex;
+    justify-content: center;
+    font-size: 24px;
+}
 
 #closeBookButton{
     height: 3em;
@@ -170,13 +201,14 @@ body, html {
 }
 
 #vow-div {
-    height: 370px;
+    height: 360px;
     overflow-y: scroll;
     background-color: #ea98cf21;;
     padding: 20px 10px;
     border-radius: 12px;
     border: #c72781;
     border-style: solid;
+    margin: 0 8px;
 }
 
 
