@@ -276,8 +276,8 @@
 			<div id="page-div-11" class="content-area hide">
         		<div id="t" class="fade-in-item">
 					<div id="vow-div">
-						<div class="fc">相信妳已經猜到「ㄑㄏ 魔法試煉」</div>
-						<div class="fc">其實就是我要跟妳求婚了<span class="big-txt">🤗❤️</span><br><br></div>
+						<div class="fc">「ㄑㄏ 魔法試煉」</div>
+						<div class="fc">其實就是我要跟妳求婚了！<span class="big-txt">🤗❤️</span><br><br></div>
 						<div class="fc">親愛的老婆～ 我的太太～<br></div>
 						<div class="fc">我最好的朋友、最支持的夥伴</div>
 						<div class="fc">我的大寶貝～我的情人<span class="big-txt">🥰🥰</span><br><br></div>
@@ -298,7 +298,7 @@
 						<div class="fc">笑對方太愛買，笑我們總是逛的好慢</div>
 						<div class="fc">然後永遠一起回家<span class="big-txt">🏠</span><br><br></div>
 						<div class="fc">妳跟我求婚的日子是4/4</div>
-						<div class="fc">我們「44」順心、「4」季平安...等等</div>
+						<div class="fc">我們「44」順心、「4」季平安</div>
 						<div class="fc">今天是 1/17</div>
 						<div class="fc">我們「一～起」！</div>
 						<div class="fc">心裡上、物理上我們都喜歡一起<span class="big-txt">😘</span></div>
@@ -323,8 +323,12 @@
 			<!--  page 12 解地點 -->
 			<div id="page-div-12" class="content-area hide">
         		<div id="t" class="fade-in-item">
-
-
+					<div class="fc">哈囉！我的寶貝<span class="big-txt">😘</span></div>
+					<div class="fc">恭喜妳被求婚成功<span class="big-txt">👏🏻👏🏻👏🏻</span><br><br></div>
+					<div class="fc">為妳準備的魔法試煉還沒結束歐<span class="big-txt">😉</span><br><br></div>
+					<div class="fc">稍早是考驗妳對的咒語的理解</div>
+					<div class="fc">現在，要考驗妳對魔法世界的理解了<br><br></div>
+					<div class="fc">請動動腦想出以下提示的答案是什麼吧！</div>
 
 					<div class="image-grid-5">
 						<img src="./pics/royal/r3.png" class="grid-image-5">
@@ -341,7 +345,7 @@
 						<div class=""></div>
 					</div>
 					<div class="fc">
-						<input type="text" id="guessInput" class="clean-input" placeholder="請輸入人名">
+						<input type="text" id="guessInput" class="clean-input" placeholder="請輸入答案">
 						<div style="text-align: center; margin-top: 0px;">
 							<button class="clean-input-btn" onclick="checkAnswer()">GO</button>
 						</div>
@@ -349,6 +353,25 @@
 				</div>
         	</div>
 
+			<!--  page 13 地點解答 -->
+			<div id="page-div-13" class="content-area hide">
+        		<div id="t" class="fade-in-item">
+					<div class="fc">答對！ROYAL 就是老爺大酒店！<br><br></div>
+					<div class="fc">身為新竹人＆新竹媳婦的我們</div>
+					<div class="fc">以後大概不會計畫去住新竹的厲害飯店<span class="big-txt pink-txt">🤣</span></div>
+					<div class="fc">所以趁這個機會</div>
+					<div class="fc">來去當一下家鄉的觀光客<span class="big-txt">🤭🤭🤭</span></div>
+					<div class="fc">老爺飯店可是新竹第一家國際觀光飯店呢<span class="big-txt">🥇</span><br><br></div>
+					<div class="fc">我們在一起之後的第一個跨年</div>
+					<div class="fc">去了泰安泡溫泉<span class="big-txt pink-txt">♨️</span></div>
+					<div class="fc">妳看起來好喜歡～ 好享受～</div>
+					<div class="fc">樣子實在是太口愛惹<span class="big-txt pink-txt">☺️🥰☺️🥰</span></div>
+					<div class="fc">烙印在我的心中<span class="big-txt pink-txt">😶‍🌫️</span><br><br></div>
+					<div class="fc">現在～讓我帶妳出發泡個溫泉，重溫舊夢<span class="big-txt pink-txt">🥂</span></div>
+					<div class="fc">並且一起完成最終任務吧<span class="big-txt pink-txt">🥳🥳</span></div>
+					<div class="fc">Let’s Mang<span class="big-txt pink-txt">❤️</span></div>
+				</div>
+        	</div>
 
 			<!--  page 99 魔咒說明書 -->
 			<div id="page-div-99" class="spell-area hide">
@@ -517,6 +540,10 @@
 			document.getElementById('guessTitle').textContent = "魔法世界常識測驗";
 			document.getElementById("guessTitle").classList.remove("hide");
 			showContentAnimation();
+		} else if(pageNo == 13) {
+			document.getElementById('guessTitle').textContent = "出發 💘";
+			document.getElementById("guessTitle").classList.remove("hide");
+			showContentAnimation();
 		} else if(pageNo == 99) {
 			document.getElementById("guessTitle").classList.add("hide");
 			document.getElementById("closeBookButton").classList.remove("hide");
@@ -591,6 +618,14 @@
 			let userAnswer = document.querySelector('#page-div-11 #guessInput').value.trim();
 			if (userAnswer.toLowerCase() === "i really do" || userAnswer.toLowerCase() === "ireallydo" || userAnswer.toLowerCase() === "我超願意") {
 				goToPage(12);
+				alert("Bingo ！!");
+			} else {
+				alert("再想想ㄅ ！!");
+			}
+		} else if(currentPage == 12) {
+			let userAnswer = document.querySelector('#page-div-12 #guessInput').value.trim();
+			if (userAnswer.toLowerCase() === "royal") {
+				goToPage(13);
 				alert("Bingo ！!");
 			} else {
 				alert("再想想ㄅ ！!");
