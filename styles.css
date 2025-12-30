@@ -276,7 +276,7 @@ body, html {
 }
 .lu-image {
     object-fit: contain;
-	height: 8em;
+	height: 130px;
 }
 .del-style {
     text-decoration-thickness: 2px;
