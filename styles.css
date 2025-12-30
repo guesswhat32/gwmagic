@@ -274,6 +274,10 @@ body, html {
 	height: 10em;
 	/* width: 100%; */
 }
+.lu-image {
+    object-fit: contain;
+	height: 8em;
+}
 .del-style {
     text-decoration-thickness: 2px;
     text-decoration-color: red;
