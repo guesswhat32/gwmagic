@@ -339,6 +339,7 @@
 						<div class=""></div>
 						<div class=""></div>
 					</div>
+					<br>
 					<div class="fc">
 						<input type="text" id="guessInput" class="clean-input" placeholder="請輸入答案">
 						<div style="text-align: center; margin-top: 0px;">
@@ -471,7 +472,7 @@
 	document.getElementById('guessTitle').addEventListener('click', function() {
 		clickGuessTitleCount++;
 	    
-	    if (clickGuessTitleCount === 3) {
+	    if (clickGuessTitleCount === 6) {
 	    	const userInput = prompt('請輸入一個數字：');
 	        
 	        const inputNumber = parseFloat(userInput);
