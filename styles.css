@@ -106,7 +106,7 @@ body, html {
     /* 設置 2x2 網格，每列和每行平均分配空間 */
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
     gap: 10px; /* 圖片之間的間距 */
-    padding: 10px 10px 0px 10px;
+    padding: 10px 0px 0px 0px;
     justify-items: center;
     justify-self: anchor-center;
 }
@@ -116,8 +116,8 @@ body, html {
     /* 設置 2x2 網格，每列和每行平均分配空間 */
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
     gap: 10px; /* 圖片之間的間距 */
-    padding: 0 10px;
     margin-bottom: 20px;
+    justify-self: anchor-center;
 }
 #y-div {
     display: flex;
