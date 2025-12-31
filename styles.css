@@ -108,7 +108,8 @@ body, html {
     gap: 10px; /* 圖片之間的間距 */
     padding: 10px 0px 0px 0px;
     justify-items: center;
-    justify-self: anchor-center;
+    justify-self: center;
+    margin: 0 auto;
 }
 .image-grid-5-m {
     width: 95%; /* 網格佔據 content-area 寬度的 80% */
@@ -117,7 +118,8 @@ body, html {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
     gap: 10px; /* 圖片之間的間距 */
     margin-bottom: 20px;
-    justify-self: anchor-center;
+    justify-self: center;
+    margin: 0 auto;
 }
 #y-div {
     display: flex;

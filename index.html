@@ -184,7 +184,7 @@
 						<div class="fc text-para period-mg spell-txt">「Tarantallegra / 塔朗泰拉跳」</div>
 						<div class="fc text-para">從一開始欣賞妳獨自漫舞<span class="big-txt">💃🏻</span></div>
 						<div class="fc text-para">到被逼著一起跳<span class="big-txt">👯</span></div>
-						<div class="fc period-mg text-para">到現在 me也不自覺地開始跳舞<span class="big-txt">🙉</span></div>
+						<div class="fc period-mg text-para">到現在 me 也不自覺地開始跳舞<span class="big-txt">🙉</span></div>
 						<div class="fc text-para period-mg orange-txt">待在妳身邊的我，無敵開心又自在</div>
 						<div class="fc text-para">好喜歡妳的 chill & cool～</div>
 						<!-- <div class="fc text-para">以後的日子</div>
@@ -293,7 +293,7 @@
 							<div class="fc text-para">妳跟我求婚的日子是4/4</div>
 							<div class="fc text-para period-mg">我們「44」順心、「4」季平安</div>
 							<div class="fc text-para">今天是 1/17，我們「一～起」！</div>
-							<div class="fc text-para period-mg">心裡上、物理上我們都喜歡一起<span class="big-txt">😘</span></div>
+							<div class="fc text-para period-mg">心裡上、物理上我們都喜歡一起一起<span class="big-txt">😘</span></div>
 							<div class="fc text-para">唸起來也表示「依依妻」 歐～</div>
 							<div class="fc text-para period-mg">我們都喜歡當小鳥依人，依著老婆呢<span class="big-txt">👩🏻‍❤️‍💋‍👩🏻 </span></div>
 							<div class="fc text-para">爐子丁芒真會挑日子！<span class="big-txt">🙌🏻</span></div>
@@ -459,6 +459,8 @@
 	var currentPage = localStorage.getItem('nowPage') == null ? 1 : localStorage.getItem('nowPage');
 	var returnPage = 1;
 	var currentSlideIdx = 0;
+	var currentSlideIdx2 = 0;
+	var currentSlideIdx3 = 0;
 	var page4ImgSrc = ["./pics/renn/luwork.png", "./pics/renn/lutired.png", "./pics/renn/mangwork.png",
 		"./pics/renn/mangtired.png", "./pics/renn/together.png", "./pics/renn/charge.png",];
 	
@@ -650,7 +652,7 @@
 		let totelImg = imgs.length;
 		if(direction == 0) {
 			// init
-			currentSlideIdx = 0;
+			//currentSlideIdx = 0;
 
 		} else {
 			imgs[currentSlideIdx].classList.add("opacity");
@@ -676,22 +678,22 @@
 		let totelImg = imgs.length;
 		if(direction == 0) {
 			// init
-			currentSlideIdx = 0;
+			//currentSlideIdx = 0;
 
 		} else {
-			imgs[currentSlideIdx].classList.add("opacity");
-			imgs[currentSlideIdx].classList.add("hide");
+			imgs[currentSlideIdx2].classList.add("opacity");
+			imgs[currentSlideIdx2].classList.add("hide");
 
-			if(direction == -1 && currentSlideIdx == 0) {
-				currentSlideIdx = totelImg - 1;
-			} else if(direction == 1 && currentSlideIdx == (totelImg - 1)) {
-				currentSlideIdx = 0;
+			if(direction == -1 && currentSlideIdx2 == 0) {
+				currentSlideIdx2 = totelImg - 1;
+			} else if(direction == 1 && currentSlideIdx2 == (totelImg - 1)) {
+				currentSlideIdx2 = 0;
 			} else {
-				currentSlideIdx += direction; 
+				currentSlideIdx2 += direction; 
 			}
 
-			imgs[currentSlideIdx].classList.remove("opacity");
-			imgs[currentSlideIdx].classList.remove("hide");
+			imgs[currentSlideIdx2].classList.remove("opacity");
+			imgs[currentSlideIdx2].classList.remove("hide");
 		} 
 	}
 
@@ -702,22 +704,22 @@
 		let totelImg = imgs.length;
 		if(direction == 0) {
 			// init
-			currentSlideIdx = 0;
+			// currentSlideIdx3 = 0;
 
 		} else {
-			imgs[currentSlideIdx].classList.add("opacity");
-			imgs[currentSlideIdx].classList.add("hide");
+			imgs[currentSlideIdx3].classList.add("opacity");
+			imgs[currentSlideIdx3].classList.add("hide");
 
-			if(direction == -1 && currentSlideIdx == 0) {
-				currentSlideIdx = totelImg - 1;
-			} else if(direction == 1 && currentSlideIdx == (totelImg - 1)) {
-				currentSlideIdx = 0;
+			if(direction == -1 && currentSlideIdx3 == 0) {
+				currentSlideIdx3 = totelImg - 1;
+			} else if(direction == 1 && currentSlideIdx3 == (totelImg - 1)) {
+				currentSlideIdx3 = 0;
 			} else {
-				currentSlideIdx += direction; 
+				currentSlideIdx3 += direction; 
 			}
 
-			imgs[currentSlideIdx].classList.remove("opacity");
-			imgs[currentSlideIdx].classList.remove("hide");
+			imgs[currentSlideIdx3].classList.remove("opacity");
+			imgs[currentSlideIdx3].classList.remove("hide");
 		} 
 	}
 
